@@ -5,7 +5,10 @@
     "test": {
       "scripts": {
         "test": "bundle exec rake test"
-      }
+      },
+      "addons": [
+      	"heroku-postgresql:in-dyno"
+      ]
     }
   }
 }
