@@ -27,3 +27,6 @@ export PATH=$SONAR_SCANNER_HOME/bin:$PATH
 
 echo "set Sonar scanner home"
 export SONAR_SCANNER_OPTS="-server"
+
+echo "test installation========================================================"
+sonar-scanner -h
