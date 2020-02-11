@@ -37,6 +37,5 @@ echo "Running sonar scanner - "
 sonar-scanner -X \
   -Dsonar.projectKey=SangramTester_depot2 \
   -Dsonar.organization=sangramtester \
-  -Dsonar.sources=. \
   -Dsonar.host.url=https://sonarcloud.io \
   -Dsonar.login=$SONAR_TOKEN
