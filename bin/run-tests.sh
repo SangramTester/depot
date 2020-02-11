@@ -32,7 +32,7 @@ export SONAR_SCANNER_OPTS="-server"
 echo "test installation========================================================"
 sonar-scanner -h
 
-echo "Running sonar scanner"
+echo "Running sonar scanner - "
 
 sonar-scanner -X \
   -Dsonar.projectKey=SangramTester_depot2 \
