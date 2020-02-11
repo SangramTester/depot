@@ -4,7 +4,8 @@
   "environments": {
     "test": {
       "scripts": {
-        "test": "bundle exec rake test"
+      	"test-setup": "./bin/setup-tests.sh",
+        "test": "./bin/run-tests.sh"
       },
       "addons": [
       	"heroku-postgresql:in-dyno"
