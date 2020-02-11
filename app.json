@@ -1,0 +1,11 @@
+{
+  "name": "Sonar-test",
+  "description": "This app does one little thing, and does it well.",    
+  "environments": {
+    "test": {
+      "scripts": {
+        "test": "bundle exec rake test"
+      }
+    }
+  }
+}
