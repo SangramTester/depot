@@ -2,6 +2,9 @@
 #!/bin/bash
 set -exu
 
+echo "Run rspec"
+bundle exec rspec
+
 echo "Export Sonar scanner version"
 export SONAR_SCANNER_VERSION=4.2.0.1873
 
@@ -31,6 +34,7 @@ export SONAR_SCANNER_OPTS="-server"
 
 echo "test installation========================================================"
 sonar-scanner -h
+
 
 echo "Running sonar scanner - "
 
