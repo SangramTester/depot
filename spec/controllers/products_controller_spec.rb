@@ -72,56 +72,56 @@ RSpec.describe ProductsController, type: :controller do
     end
   end
 
-  describe "POST #create" do
-    context "with valid params" do
-      it "creates a new Product" do
-        expect {
-          post :create, params: {product: valid_attributes}, session: valid_session
-        }.to change(Product, :count).by(1)
-      end
+#   describe "POST #create" do
+#     context "with valid params" do
+#       it "creates a new Product" do
+#         expect {
+#           post :create, params: {product: valid_attributes}, session: valid_session
+#         }.to change(Product, :count).by(1)
+#       end
 
-      it "redirects to the created product" do
-        post :create, params: {product: valid_attributes}, session: valid_session
-        expect(response).to redirect_to(Product.last)
-      end
-    end
+#       it "redirects to the created product" do
+#         post :create, params: {product: valid_attributes}, session: valid_session
+#         expect(response).to redirect_to(Product.last)
+#       end
+#     end
 
-    context "with invalid params" do
-      it "returns a success response (i.e. to display the 'new' template)" do
-        post :create, params: {product: invalid_attributes}, session: valid_session
-        expect(response).to be_successful
-      end
-    end
-  end
+#     context "with invalid params" do
+#       it "returns a success response (i.e. to display the 'new' template)" do
+#         post :create, params: {product: invalid_attributes}, session: valid_session
+#         expect(response).to be_successful
+#       end
+#     end
+#   end
 
-  describe "PUT #update" do
-    context "with valid params" do
-      let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
-      }
+#   describe "PUT #update" do
+#     context "with valid params" do
+#       let(:new_attributes) {
+#         skip("Add a hash of attributes valid for your model")
+#       }
 
-      it "updates the requested product" do
-        product = Product.create! valid_attributes
-        put :update, params: {id: product.to_param, product: new_attributes}, session: valid_session
-        product.reload
-        skip("Add assertions for updated state")
-      end
+#       it "updates the requested product" do
+#         product = Product.create! valid_attributes
+#         put :update, params: {id: product.to_param, product: new_attributes}, session: valid_session
+#         product.reload
+#         skip("Add assertions for updated state")
+#       end
 
-      it "redirects to the product" do
-        product = Product.create! valid_attributes
-        put :update, params: {id: product.to_param, product: valid_attributes}, session: valid_session
-        expect(response).to redirect_to(product)
-      end
-    end
+#       it "redirects to the product" do
+#         product = Product.create! valid_attributes
+#         put :update, params: {id: product.to_param, product: valid_attributes}, session: valid_session
+#         expect(response).to redirect_to(product)
+#       end
+#     end
 
-    context "with invalid params" do
-      it "returns a success response (i.e. to display the 'edit' template)" do
-        product = Product.create! valid_attributes
-        put :update, params: {id: product.to_param, product: invalid_attributes}, session: valid_session
-        expect(response).to be_successful
-      end
-    end
-  end
+#     context "with invalid params" do
+#       it "returns a success response (i.e. to display the 'edit' template)" do
+#         product = Product.create! valid_attributes
+#         put :update, params: {id: product.to_param, product: invalid_attributes}, session: valid_session
+#         expect(response).to be_successful
+#       end
+#     end
+#   end
 
 #   describe "DELETE #destroy" do
 #     it "destroys the requested product" do
