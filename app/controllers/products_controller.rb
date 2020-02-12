@@ -12,6 +12,10 @@ class ProductsController < ApplicationController
   def show
     puts 'test'
   end
+  
+  def test_method
+    puts 'test method'
+  end
 
   # GET /products/new
   def new
