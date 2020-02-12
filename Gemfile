@@ -32,7 +32,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'simplecov', '~> 0.17.1'
   gem 'rubocop', '~> 0.79.0', require: false
-  gem 'rubocop-rspec', require: false
+  # gem 'rubocop-rspec', require: false
   # gem 'rubocop-performance'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
