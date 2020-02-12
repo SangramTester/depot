@@ -1,6 +1,12 @@
 #!/bin/bash
 set -exu
 
+echo "Install Rubocop"
+gem install rubocop
+
+echo "Run Rubocop"
+bundle exec rubocop --format json -o rubocop-result.json
+
 # echo "Export Sonar scanner version"
 # export SONAR_SCANNER_VERSION=4.2.0.1873
 
