@@ -4,16 +4,23 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
+    a = 'This is a test code smell'
+    b = 'This is a test code smell'
+    c = 'This is a test code smell'
+    d = 'This is a test code smell'
     @products = Product.all
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
+    a = 'This is a test code smell'
   end
 
   # GET /products/new
   def new
+    a = 'This is a test code smell'
+    b = 'This is a test code smell'
     @product = Product.new
   end
 
