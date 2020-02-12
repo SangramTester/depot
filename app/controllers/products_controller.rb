@@ -15,11 +15,12 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     a = 'This is a test code smell'
-    b = 1    
   end
 
   # GET /products/new
   def new
+    a = 'This is a test code smell'
+    b = 'This is a test code smell'
     @product = Product.new
   end
 
