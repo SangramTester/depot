@@ -6,7 +6,7 @@ echo "Run rspec"
 bundle exec rspec
 
 echo "Run Rubocop"
-rubocop --format=json --out=rubocop-result.json
+bundle exec rubocop --format=json --out=rubocop-result.json
 
 echo "Export Sonar scanner version"
 export SONAR_SCANNER_VERSION=4.2.0.1873
