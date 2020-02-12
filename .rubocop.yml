@@ -1,0 +1,5 @@
+require: rubocop-performance
+
+require:
+  - rubocop-other-extension
+  - rubocop-rails
