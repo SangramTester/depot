@@ -1,6 +1,13 @@
 #!/bin/bash
 set -exu
 
+echo "============================================================================"
+
+echo $(heroku help)
+
+heroku config:get HEROKU_BRANCH
+
+echo "============================================================================"
 # echo "Install Rubocop"
 # gem install rubocop
 
