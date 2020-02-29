@@ -41,14 +41,14 @@ export SONAR_SCANNER_OPTS="-server"
 echo "test installation========================================================"
 sonar-scanner -h
 
-echo $HEROKU_APP_NAME
+# echo $HEROKU_APP_NAME
 
 echo "Running sonar scanner - "
 
 sonar-scanner -X \
   -Dsonar.login=$SONAR_TOKEN \
-  -Dsonar.branch.name=$(heroku config:get HEROKU_BRANCH -a $HEROKU_APP_NAME) \
-  -Dsonar.pullrequest.base=master \
-  -Dsonar.pullrequest.provider=GitHub \
-  -Dsonar.pullrequest.github.repository=SangramTester/depot \
-  -Dsonar.pullrequest.key=$HEROKU_PR_NUMBER
+  # -Dsonar.branch.name=$(heroku config:get HEROKU_BRANCH -a $HEROKU_APP_NAME) \
+  # -Dsonar.pullrequest.base=master \
+  # -Dsonar.pullrequest.provider=GitHub \
+  # -Dsonar.pullrequest.github.repository=SangramTester/depot \
+  # -Dsonar.pullrequest.key=$HEROKU_PR_NUMBER
