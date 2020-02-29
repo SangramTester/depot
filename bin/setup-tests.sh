@@ -1,6 +1,11 @@
 #!/bin/bash
 set -exu
 
+echo "============================================================================"
+
+echo $(heroku config:get HEROKU_APP_NAME )
+
+echo "============================================================================"
 # echo "Install Rubocop"
 # gem install rubocop
 
