@@ -4,23 +4,20 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    a = 'This is a test code smell'
-    b = 'This is a test code smell'
-    c = 'This is a test code smell'
-    d = 'This is a test code smell'
     @products = Product.all
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
-    a = 'This is a test code smell'
   end
 
   # GET /products/new
   def new
-    a = 'This is a test code smell'
-    b = 'This is a test code smell'
+    print('This is a test code smell')
+    print('This is a test code smell')
+    print('This is a test code smell')
+    print('This is a test code smell')
     @product = Product.new
   end
 
@@ -31,10 +28,16 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
+    a = 'This is a test code smell'
+    b = 'This is a test code smell'
+    c = 'This is a test code smell'
+    d = 'This is a test code smell'
     @product = Product.new(product_params)
+    puts a
 
     respond_to do |format|
       if @product.save
+        puts b
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
       else

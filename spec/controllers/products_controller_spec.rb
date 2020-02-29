@@ -42,6 +42,13 @@ RSpec.describe ProductsController, type: :controller do
   let(:valid_session) { {} }
 
   describe "GET #index" do
+    a = 'This is a test'
+    b = 'This is a test'
+    c = 'This is a test'
+    d = 'This is a test'
+    e = 'This is a test'
+    f = 'This is a test'
+      
     it "returns a success response" do
       Product.create! valid_attributes
       get :index, params: {}, session: valid_session

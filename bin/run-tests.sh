@@ -5,6 +5,14 @@ set -exu
 echo "Run rspec"
 bundle exec rspec
 
+# echo "Install Rubocop"
+# gem install rubocop
+
+# echo "Run Rubocop"
+# bundle exec rubocop --format json -o rubocop-result.json
+
+# sleep 2m
+
 echo "Export Sonar scanner version"
 export SONAR_SCANNER_VERSION=4.2.0.1873
 
@@ -35,11 +43,14 @@ export SONAR_SCANNER_OPTS="-server"
 echo "test installation========================================================"
 sonar-scanner -h
 
+# echo $HEROKU_APP_NAME
 
 echo "Running sonar scanner - "
 
 sonar-scanner -X \
-  -Dsonar.projectKey=SangramTester_depot2 \
-  -Dsonar.organization=sangramtester \
-  -Dsonar.host.url=https://sonarcloud.io \
-  -Dsonar.login=$SONAR_TOKEN
+  -Dsonar.login=$SONAR_TOKEN \
+  # -Dsonar.branch.name=$(heroku config:get HEROKU_BRANCH -a $HEROKU_APP_NAME) \
+  # -Dsonar.pullrequest.base=master \
+  # -Dsonar.pullrequest.provider=GitHub \
+  # -Dsonar.pullrequest.github.repository=SangramTester/depot \
+  # -Dsonar.pullrequest.key=$HEROKU_PR_NUMBER
