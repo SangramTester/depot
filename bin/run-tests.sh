@@ -45,4 +45,9 @@ sonar-scanner -h
 echo "Running sonar scanner - "
 
 sonar-scanner -X \
-  -Dsonar.login=$SONAR_TOKEN
+  -Dsonar.login=$SONAR_TOKEN \
+  -Dsonar.branch.name=$HEROKU_BRANCH \
+  -Dsonar.pullrequest.base=master \
+  -Dsonar.pullrequest.provider=GitHub \
+  -Dsonar.pullrequest.github.repository=SangramTester/depot \
+  -Dsonar.pullrequest.key=$HEROKU_PR_NUMBER
