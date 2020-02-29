@@ -14,6 +14,10 @@ class ProductsController < ApplicationController
 
   # GET /products/new
   def new
+    print('This is a test code smell')
+    print('This is a test code smell')
+    print('This is a test code smell')
+    print('This is a test code smell')
     @product = Product.new
   end
 
