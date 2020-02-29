@@ -45,6 +45,8 @@ sonar-scanner -h
 
 echo "Running sonar scanner - "
 
+git branch -f master origin/master
+
 sonar-scanner -X \
   -Dsonar.login=$SONAR_TOKEN \
   # -Dsonar.branch.name=$(heroku config:get HEROKU_BRANCH -a $HEROKU_APP_NAME) \
