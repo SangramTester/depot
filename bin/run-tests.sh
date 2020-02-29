@@ -11,6 +11,8 @@ bundle exec rspec
 # echo "Run Rubocop"
 # bundle exec rubocop --format json -o rubocop-result.json
 
+sleep 2m
+
 echo "Export Sonar scanner version"
 export SONAR_SCANNER_VERSION=4.2.0.1873
 
