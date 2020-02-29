@@ -14,10 +14,5 @@
       	"heroku-postgresql:in-dyno"
       ]
     }
-  },
-  "buildpacks": [
-    {
-      "url": "heroku-community/cli"
-    }
-  ]
+  }
 }
