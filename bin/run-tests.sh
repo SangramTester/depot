@@ -45,7 +45,4 @@ sonar-scanner -h
 echo "Running sonar scanner - "
 
 sonar-scanner -X \
-  -Dsonar.projectKey=$SONAR_PROJECT_KEY \
-  -Dsonar.organization=$SONAR_ORGANIZATION \
-  -Dsonar.host.url=https://sonarcloud.io \
   -Dsonar.login=$SONAR_TOKEN
