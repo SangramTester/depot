@@ -11,7 +11,6 @@ bundle exec rspec
 # echo "Run Rubocop"
 # bundle exec rubocop --format json -o rubocop-result.json
 
-sleep 1m
 
 echo "Export Sonar scanner version"
 export SONAR_SCANNER_VERSION=4.2.0.1873
@@ -43,7 +42,7 @@ export SONAR_SCANNER_OPTS="-server"
 echo "test installation========================================================"
 sonar-scanner -h
 
-# echo $HEROKU_APP_NAME
+echo $HEROKU_APP_NAME
 
 echo "Running sonar scanner - "
 
