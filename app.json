@@ -1,6 +1,6 @@
 {
   "name": "Sonar-test",
-  "description": "This app does one little thing, and does it well.",
+  "description": "This app does one little thing, and does it well, hopefully.",
   "scripts": {
     "postdeploy": "./bin/review_app/postdeploy.sh"
   },
