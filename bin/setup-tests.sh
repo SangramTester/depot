@@ -4,10 +4,9 @@ set -exu
 echo "============================================================================"
 
 echo $(heroku help)
+heroku apps:info app
 
-heroku apps:info
-
-heroku config:get HEROKU_BRANCH
+# heroku config:get HEROKU_BRANCH
 
 echo "============================================================================"
 # echo "Install Rubocop"
