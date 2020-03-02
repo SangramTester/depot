@@ -4,7 +4,8 @@ set -exu
 echo "============================================================================"
 
 echo $(heroku help)
-heroku apps:info app
+heroku authorizations:create
+heroku apps
 
 # heroku config:get HEROKU_BRANCH
 
