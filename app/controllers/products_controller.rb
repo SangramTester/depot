@@ -10,14 +10,14 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    print('This is a test code smell')
+    print('This is a test code smell')
+    print('This is a test code smell')
+    print('This is a test code smell')
   end
 
   # GET /products/new
   def new
-    print('This is a test code smell')
-    print('This is a test code smell')
-    print('This is a test code smell')
-    print('This is a test code smell')
     @product = Product.new
   end
 
