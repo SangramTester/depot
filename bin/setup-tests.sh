@@ -6,6 +6,7 @@ echo "==========================================================================
 echo $(heroku help)
 heroku authorizations:create
 heroku apps
+echo $HEROKU_TEST_RUN_BRANCH
 
 # heroku config:get HEROKU_BRANCH
 
