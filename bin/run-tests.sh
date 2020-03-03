@@ -56,8 +56,8 @@ echo "PR number========================================================"
 sonar-scanner -X \
   -Dsonar.login=$SONAR_TOKEN \
   -Dsonar.pullrequest.base=master \
+  -Dsonar.branch.name=$HEROKU_TEST_RUN_BRANCH \
   -Dsonar.pullrequest.key=$GIT_PR_NUMBER
-  #   -Dsonar.branch.name=$HEROKU_TEST_RUN_BRANCH
 #   -Dsonar.pullrequest.provider=GitHub \
 #   -Dsonar.pullrequest.github.repository=SangramTester/depot
 
