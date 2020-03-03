@@ -42,12 +42,18 @@ export SONAR_SCANNER_OPTS="-server"
 echo "test installation========================================================"
 sonar-scanner -h
 
+echo "*** Get github PR number. Put 0 if the response is empty ***"
+GIT_PR_NUMBER=$(curl https://api.github.com/repos/SangramTester/depot/pulls?head=SangramTester:$HEROKU_TEST_RUN_BRANCH \
+ -H "Authorization: token $GITHUB_API_KEY" \
+ | ruby -e "require 'json'; response = JSON.parse(ARGF.read); response.count > 0 ? (puts response[0]['number']) : (puts 0) ")
+
 echo "Running sonar scanner - "
 
 sonar-scanner -X \
   -Dsonar.login=$SONAR_TOKEN \
   -Dsonar.branch.name=$HEROKU_TEST_RUN_BRANCH
-  # -Dsonar.pullrequest.base=master \
-  # -Dsonar.pullrequest.provider=GitHub \
-  # -Dsonar.pullrequest.github.repository=SangramTester/depot \
-  # -Dsonar.pullrequest.key=$HEROKU_PR_NUMBER
+  -Dsonar.pullrequest.base=master \
+  -Dsonar.pullrequest.key=$GIT_PR_NUMBER
+  -Dsonar.pullrequest.provider=GitHub \
+  -Dsonar.pullrequest.github.repository=SangramTester/depot \
+
