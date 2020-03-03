@@ -42,8 +42,6 @@ export SONAR_SCANNER_OPTS="-server"
 echo "test installation========================================================"
 sonar-scanner -h
 
-echo $HEROKU_APP_NAME
-
 echo "Running sonar scanner - "
 
 sonar-scanner -X \
