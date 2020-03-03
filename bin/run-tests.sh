@@ -51,7 +51,7 @@ echo "Running sonar scanner - "
 echo "PR number========================================================"
 echo $GIT_PR_NUMBER
 echo $HEROKU_TEST_RUN_BRANCH
-echo "test"
+echo "ping pong"
 echo "PR number========================================================"
 
 sonar-scanner -X \
