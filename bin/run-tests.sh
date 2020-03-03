@@ -59,4 +59,5 @@ sonar-scanner -X \
   -Dsonar.pullrequest.base=master \
   -Dsonar.pullrequest.branch=$HEROKU_TEST_RUN_BRANCH \
   -Dsonar.pullrequest.key=$GIT_PR_NUMBER \
-  -Dsonar.pullrequest.provider=GitHub
+  -Dsonar.pullrequest.provider=GitHub \
+  -Dsonar.scm.provider=git
