@@ -48,12 +48,16 @@ GIT_PR_NUMBER=$(curl https://api.github.com/repos/SangramTester/depot/pulls?head
  | ruby -e "require 'json'; response = JSON.parse(ARGF.read); response.count > 0 ? (puts response[0]['number']) : (puts 0) ")
 
 echo "Running sonar scanner - "
+echo "PR number========================================================"
+echo $GIT_PR_NUMBER
+echo $HEROKU_TEST_RUN_BRANCH
+echo "PR number========================================================"
 
 sonar-scanner -X \
   -Dsonar.login=$SONAR_TOKEN \
-  -Dsonar.branch.name=$HEROKU_TEST_RUN_BRANCH
   -Dsonar.pullrequest.base=master \
-  -Dsonar.pullrequest.key=$GIT_PR_NUMBER \
-  -Dsonar.pullrequest.provider=GitHub \
-  -Dsonar.pullrequest.github.repository=SangramTester/depot
+  -Dsonar.branch.name=$HEROKU_TEST_RUN_BRANCH
+  -Dsonar.pullrequest.key=$GIT_PR_NUMBER
+#   -Dsonar.pullrequest.provider=GitHub \
+#   -Dsonar.pullrequest.github.repository=SangramTester/depot
 
