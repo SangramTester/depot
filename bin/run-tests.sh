@@ -11,7 +11,6 @@ bundle exec rspec
 # echo "Run Rubocop"
 # bundle exec rubocop --format json -o rubocop-result.json
 
-# sleep 2m
 
 echo "Export Sonar scanner version"
 export SONAR_SCANNER_VERSION=4.2.0.1873
@@ -43,14 +42,21 @@ export SONAR_SCANNER_OPTS="-server"
 echo "test installation========================================================"
 sonar-scanner -h
 
-# echo $HEROKU_APP_NAME
+echo "*** Get github PR number. Put 0 if the response is empty ***"
+GIT_PR_NUMBER=$(curl https://api.github.com/repos/SangramTester/depot/pulls?head=SangramTester:$HEROKU_TEST_RUN_BRANCH \
+ -H "Authorization: token $GITHUB_API_KEY" \
+ | ruby -e "require 'json'; response = JSON.parse(ARGF.read); response.count > 0 ? (puts response[0]['number']) : (puts 0) ")
 
 echo "Running sonar scanner - "
+echo "PR number========================================================"
+echo $GIT_PR_NUMBER
+echo $HEROKU_TEST_RUN_BRANCH
+echo "ping pong"
+echo "PR number========================================================"
 
 sonar-scanner -X \
   -Dsonar.login=$SONAR_TOKEN \
-  # -Dsonar.branch.name=$(heroku config:get HEROKU_BRANCH -a $HEROKU_APP_NAME) \
-  # -Dsonar.pullrequest.base=master \
-  # -Dsonar.pullrequest.provider=GitHub \
-  # -Dsonar.pullrequest.github.repository=SangramTester/depot \
-  # -Dsonar.pullrequest.key=$HEROKU_PR_NUMBER
+  -Dsonar.pullrequest.base=master \
+  -Dsonar.pullrequest.branch=$HEROKU_TEST_RUN_BRANCH \
+  -Dsonar.pullrequest.key=$GIT_PR_NUMBER \
+  -Dsonar.pullrequest.provider=GitHub

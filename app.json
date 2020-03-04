@@ -14,5 +14,18 @@
       	"heroku-postgresql:in-dyno"
       ]
     }
-  }
+  },
+  "env": {
+    "HEROKU_API_KEY": {
+      "required": true
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-ruby.git"
+    },
+    {
+      "url": "heroku-community/cli"
+    }
+  ]
 }
