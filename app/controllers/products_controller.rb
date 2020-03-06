@@ -13,11 +13,7 @@ class ProductsController < ApplicationController
   end
 
   # GET /products/new
-  def new
-    print('This is a test code smell')
-    print('This is a test code smell')
-    print('This is a test code smell')
-    print('This is a test code smell')
+  def new    
     @product = Product.new
   end
 
@@ -28,10 +24,6 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-    a = 'This is a test code smell'
-    b = 'This is a test code smell'
-    c = 'This is a test code smell'
-    d = 'This is a test code smell'
     @product = Product.new(product_params)
     puts a
 
@@ -64,6 +56,9 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
+    print('Code smell 2')
+    print('Code smell 2')
+    print('Code smell 2')
     @product.destroy
     respond_to do |format|
       format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
