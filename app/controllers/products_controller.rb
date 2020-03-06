@@ -14,10 +14,10 @@ class ProductsController < ApplicationController
 
   # GET /products/new
   def new
-    print('This is a test code smell')
-    print('This is a test code smell')
-    print('This is a test code smell')
-    print('This is a test code smell')
+    print('Is is a test code smell')
+    print('Is is a test code smell')
+    print('Is is a test code smell')
+    print('Is is a test code smell')
     @product = Product.new
   end
 
@@ -28,10 +28,10 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-    a = 'This is a test code smell'
-    b = 'This is a test code smell'
-    c = 'This is a test code smell'
-    d = 'This is a test code smell'
+    print('Is is a test code smell')
+    print('Is is a test code smell')
+    print('Is is a test code smell')
+    print('Is is a test code smell')
     @product = Product.new(product_params)
     puts a
 
