@@ -74,6 +74,9 @@ class ProductsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
+      print('Code smell 3')
+      print('Code smell 3')
+      print('Code smell 3')
       @product = Product.find(params[:id])
     end
 
